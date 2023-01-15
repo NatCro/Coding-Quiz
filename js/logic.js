@@ -3,7 +3,7 @@
 const startButton = document.getElementById("start");
 // timer const
 const timer = document.querySelector(".timer span"); 
-let count = 5;
+let count = 30;
 const timerText = document.getElementsByTagName('div')[1];
 
 //targeting start screen
@@ -24,7 +24,9 @@ var currentScore = 0
 var choiceClick = function(element){ 
  if (element.target.id == questions[questionIndex].correct){
   currentScore = currentScore + 1;
- } 
+ } else {
+count = count - 5
+ }
  questionIndex = questionIndex + 1;
  if (questionIndex < 4) {
   getQuestion()
