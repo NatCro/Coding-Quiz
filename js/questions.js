@@ -22,6 +22,10 @@ var questions = [
     },
 ]
 
+
+
+
+
 // things we need
 
 // its a quiz challenge
@@ -37,7 +41,6 @@ var questions = [
 
 //if question is wrong subtract from timer
 
-//need timer
 
 //we also need high scores
 

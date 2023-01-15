@@ -1,117 +1,69 @@
-var specialCharacters = [
-    '@',
-    '%',
-    '+',
-    '\\',
-    '/',
-    "'",
-    '!',
-    '#',
-    '$',
-    '^',
-    '?',
-    ':',
-    ',',
-    ')',
-    '(',
-    '}',
-    '{',
-    ']',
-    '[',
-    '~',
-    '-',
-    '_',
-    '.'
-  ];
-  
-  // Array of numeric characters to be included in password
-  var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  
-  // Array of lowercase characters to be included in password
-  var lowerCasedCharacters = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z'
-  ];
-  
-  // Array of uppercase characters to be included in password
-  var upperCasedCharacters = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z'
-  ];
-  
-  // Function to prompt user for password options
-  function getPasswordOptions() {
-  
-  }
-  
-  // Function for getting a random element from an array
-  function getRandom(arr) {
-  
-  }
-  
-  // Function to generate password with user input
-  function generatePassword() {
-  
-  }
-  
-  // Get references to the #generate element
-  var generateBtn = document.querySelector('#generate');
-  
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector('#password');
-  
-    passwordText.value = password;
-  }
-  
-  // Add event listener to generate button
-  generateBtn.addEventListener('click', writePassword);
+
+//button const
+const startButton = document.getElementById("start");
+// timer const
+const timer = document.querySelector(".timer span"); 
+let count = 5;
+const timerText = document.getElementsByTagName('div')[1];
+
+//running button
+startButton.addEventListener("click", function() {
+ 
+  const countDown = setInterval(() => {
+    if (count > 0) {
+      timer.innerHTML = count;
+      count--;
+    } else {
+      clearInterval(countDown);
+       timerText.innerHTML = "Time's up!";
+    }
+  }, 1000); 
+});
+
+
+
+
+
+
+// function endQuiz();
+// if (timer <- 0){
+//   window.location.href = "highscores.html"
+// }
+
+
+
+
+
+
+
+
+
+
+//running code
+
+
+
+
+
+
+// things we need
+
+// its a quiz challenge
+
+//needs start screen with start button
+//      when start button is clicked, we start the timer and show the first question
+//          add event listener to start button
+
+//need questions
+
+//need choices for each question
+
+//if question is right move to next question
+
+//if question is wrong subtract from timer
+
+// need timer
+
+//we also need high scores
+
+//when its done it prompts to user to put initials
