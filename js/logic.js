@@ -16,6 +16,26 @@ var questionChoices = document.getElementById("choices")
 //keeping track of question index
 var questionIndex = 0
 
+//keeping track of score
+var currentScore = 0
+
+
+//what happens when an answer is clicked
+var choiceClick = function(element){ 
+ if (element.target.id == questions[questionIndex].correct){
+  currentScore = currentScore + 1;
+ } 
+ questionIndex = questionIndex + 1;
+ if (questionIndex < 4) {
+  getQuestion()
+ } else {
+
+ }
+
+}
+
+
+
 //cycle through questions
 function getQuestion(){
   //this will get current question index from the array
@@ -29,7 +49,11 @@ currentQuestion.choices.forEach(function(choice,i){
   var choiceButtons = document.createElement("button")
   choiceButtons.setAttribute("class", "choice")
   choiceButtons.setAttribute("value", choice)
-  choiceButtons.textContent = i + 1 + "." + choice
+  choiceButtons.setAttribute("id", i + 1)
+  choiceButtons.textContent = i + 1 + ". " + choice
+  questionChoices.appendChild(choiceButtons)
+   //selecting the choice - choiceClick will need to be global var
+  choiceButtons.onclick = choiceClick
 })
 
 
@@ -50,7 +74,7 @@ startButton.addEventListener("click", function() {
   //clear screen
   startPage.setAttribute("class","hide");
   questionContainer.removeAttribute("class")
-  genQuestion();
+  getQuestion();
 });
 
 

@@ -3,22 +3,22 @@ var questions = [
     {
         questionName: "what does 'js' stand for?", 
         choices: ["just sauce", "jelly straws", "java script", "jet stream"],
-        correct: "javascript"
+        correct: 3
     },
     {
         questionName: "what does 'css' stand for?", 
         choices: ["cascading style sheets", "cats singing songs", "computer sheet scripts", "can't stop singing"],
-        correct: "cascading style sheets"
+        correct: 1
     },
     {
         questionName: "what does 'html' stand for?", 
         choices: ["having too much life", "hyper text markdown language", "hyper text markup language", "huge turtles making lunch"],
-        correct: "hyper text markup language"
+        correct: 3
     },
     {
         questionName: "what does 'md' stand for?", 
         choices: ["my dad", "mark down", "massive dogs", "make delta"],
-        correct: "mark down"
+        correct: 2
     },
 ]
 
