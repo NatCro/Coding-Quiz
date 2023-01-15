@@ -1,3 +1,4 @@
+// all the questions needed for the quiz
 var questions = [
     {
         questionName: "what does 'js' stand for?", 
