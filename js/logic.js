@@ -6,6 +6,35 @@ const timer = document.querySelector(".timer span");
 let count = 5;
 const timerText = document.getElementsByTagName('div')[1];
 
+//targeting start screen
+var startPage = document.getElementById("start-screen")
+var questionContainer = document.getElementById("questions")
+
+//targeting questions
+var questionChoices = document.getElementById("choices")
+
+//keeping track of question index
+var questionIndex = 0
+
+//cycle through questions
+function getQuestion(){
+  //this will get current question index from the array
+var currentQuestion = questions[questionIndex]
+var questionTitle = document.getElementById("question-title")
+questionTitle.textContent = currentQuestion.questionName
+//clears out old choices
+questionChoices.innerHTML = ""
+//need to loop over each choice
+currentQuestion.choices.forEach(function(choice,i){
+  var choiceButtons = document.createElement("button")
+  choiceButtons.setAttribute("class", "choice")
+  choiceButtons.setAttribute("value", choice)
+  choiceButtons.textContent = i + 1 + "." + choice
+})
+
+
+}
+
 //running button
 startButton.addEventListener("click", function() {
  
@@ -18,6 +47,10 @@ startButton.addEventListener("click", function() {
        timerText.innerHTML = "Time's up!";
     }
   }, 1000); 
+  //clear screen
+  startPage.setAttribute("class","hide");
+  questionContainer.removeAttribute("class")
+  genQuestion();
 });
 
 
