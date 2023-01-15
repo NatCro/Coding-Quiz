@@ -8,11 +8,15 @@ const timerText = document.getElementsByTagName('div')[1];
 
 //targeting start screen
 var startPage = document.getElementById("start-screen")
-var questionContainer = document.getElementById("questions")
+
 
 //targeting questions
 var questionChoices = document.getElementById("choices")
+var questionContainer = document.getElementById("questions")
 
+//targeting end screen
+var endPage = document.getElementById("end-screen")
+var finalScore = document.getElementById("final-score")
 //keeping track of question index
 var questionIndex = 0
 
@@ -22,6 +26,7 @@ var currentScore = 0
 
 //what happens when an answer is clicked
 var choiceClick = function(element){ 
+  //checks to see if the value of the answer clicked matches the correct answer
  if (element.target.id == questions[questionIndex].correct){
   currentScore = currentScore + 1;
  } else {
@@ -31,6 +36,10 @@ count = count - 5
  if (questionIndex < 4) {
   getQuestion()
  } else {
+//need to make it so the end page is displayed when this runs
+questionContainer.setAttribute("class","hide");
+endPage.removeAttribute("class")
+finalScore.innerHTML = currentScore;
 
  }
 
@@ -66,11 +75,15 @@ startButton.addEventListener("click", function() {
  
   const countDown = setInterval(() => {
     if (count > 0) {
+      if (questionIndex <4){
       timer.innerHTML = count;
       count--;
-    } else {
+    }} else {
       clearInterval(countDown);
        timerText.innerHTML = "Time's up!";
+       questionContainer.setAttribute("class","hide");
+      endPage.removeAttribute("class")
+      finalScore.innerHTML = currentScore;
     }
   }, 1000); 
   //clear screen
