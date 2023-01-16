@@ -1,3 +1,4 @@
+localStorage.clear()
 
 //button const
 const startButton = document.getElementById("start");
@@ -24,6 +25,7 @@ var questionIndex = 0
 var currentScore = 0
 
 
+
 //what happens when an answer is clicked
 var choiceClick = function(element){ 
   //checks to see if the value of the answer clicked matches the correct answer
@@ -46,7 +48,6 @@ finalScore.innerHTML = currentScore;
 }
 
 
-
 //cycle through questions
 function getQuestion(){
   //this will get current question index from the array
@@ -66,13 +67,11 @@ currentQuestion.choices.forEach(function(choice,i){
    //selecting the choice - choiceClick will need to be global var
   choiceButtons.onclick = choiceClick
 })
-
-
 }
 
+
 //running button
-startButton.addEventListener("click", function() {
- 
+startButton.addEventListener("click", function(){
   const countDown = setInterval(() => {
     if (count > 0) {
       if (questionIndex <4){
@@ -95,47 +94,29 @@ startButton.addEventListener("click", function() {
 
 
 
-
-
-// function endQuiz();
-// if (timer <- 0){
-//   window.location.href = "highscores.html"
-// }
-
-
-
-
-
-
-
-
-
-
-//running code
-
-
-
-
-
-
-// things we need
-
-// its a quiz challenge
-
-//needs start screen with start button
-//      when start button is clicked, we start the timer and show the first question
-//          add event listener to start button
-
-//need questions
-
-//need choices for each question
-
-//if question is right move to next question
-
-//if question is wrong subtract from timer
-
-// need timer
-
-//we also need high scores
+//high score script
 
 //when its done it prompts to user to put initials
+
+//getting input from bar
+playerInitials = document.getElementById("initials").value
+//working button
+var button = document.getElementById("submit")
+button.addEventListener("click", function(){
+  playerInitials = document.getElementById("initials").value
+  localStorage.setItem(playerInitials, currentScore)
+  console.log(localStorage)
+  return playerInitials}) 
+
+
+
+
+
+
+
+
+
+// playerScore = document.createElement("li")
+// choiceButtons.setAttribute("class", "score")
+// choiceButtons.setAttribute("id", )
+// choiceButtons.textContent = i + 1 + ". " + choice
